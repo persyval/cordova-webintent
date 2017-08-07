@@ -105,7 +105,22 @@ public class WebIntent extends CordovaPlugin {
                 }
                 callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK, uri));
                 return true;
-            } else if ("onNewIntent".equals(action)) {
+            } 
+            else if ("getUrl2".equals(action)) {
+                if (args.length() != 0) {
+                    callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.INVALID_ACTION));
+                    return false;
+                }
+                Log.i(LOG_TAG, "persyval: calling url2");
+//                Intent i = ((CordovaActivity)this.cordova.getActivity()).getIntent();
+//                String uri = i.getDataString();
+//                if (uri == null && installReferrer != null) {
+//                    uri = installReferrer;  // App just installed, received play store referrer intent.
+//                    Log.i(LOG_TAG, String.format("URI is an install referrer: %s", installReferrer));
+                }
+                callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK, "test"));
+                return true;
+            else if ("onNewIntent".equals(action)) {
                 // Save reference to the callback; will be called on "new intent" events.
                 this.onNewIntentCallbackContext = callbackContext;
 
