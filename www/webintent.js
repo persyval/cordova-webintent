@@ -46,7 +46,7 @@
             success(args);
         }, function(args) {
             fail(args);
-        }, 'WebIntent', 'getUri', []);
+        }, 'WebIntent', 'getUrl2', []);
     };
 
     WebIntent.prototype.getExtra = function(params, success, fail) {
