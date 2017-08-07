@@ -105,8 +105,7 @@ public class WebIntent extends CordovaPlugin {
                 }
                 callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK, uri));
                 return true;
-            } 
-            else if ("getUrl2".equals(action)) {
+            } else if ("getUrl2".equals(action)) {
                 if (args.length() != 0) {
                     callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.INVALID_ACTION));
                     return false;
@@ -120,7 +119,7 @@ public class WebIntent extends CordovaPlugin {
                 }
                 callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK, "test"));
                 return true;
-            else if ("onNewIntent".equals(action)) {
+            } else if ("onNewIntent".equals(action)) {
                 // Save reference to the callback; will be called on "new intent" events.
                 this.onNewIntentCallbackContext = callbackContext;
 
