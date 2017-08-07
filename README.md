@@ -17,20 +17,14 @@
   and published to
   [cordova-misc/cordova-webintent](https://github.com/cordova-misc/cordova-webintent)
 
-- Many people forked but for some reason did not submit PRs,
-  leaving their forks divergent.
-
-## Intention to maintain
-
-**This repo is actively maintained. Please feel free to treat it as the
-canonical upstream, and submit PRs for any changes you'd like merged.**
+- Forked by me to find probles with url detection on startup
 
 ## Adding this plugin to your project
 
 1. To install the plugin, use the Cordova CLI:
 
     ```bash
-    cordova plugin add https://github.com/chrisekelley/cordova-webintent.git
+    cordova plugin add https://github.com/persyval/cordova-webintent
     ```
 
 1. Confirm that the following is now in your `config.xml` file:
