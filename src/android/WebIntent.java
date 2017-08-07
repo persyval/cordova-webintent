@@ -2,12 +2,16 @@ package com.borismus.webintent;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.lang.reflect.Array;
+import java.util.Arrays;
 
 import org.apache.cordova.CordovaActivity;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.Manifest;
+import android.app.Activity;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -19,6 +23,22 @@ import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CordovaResourceApi;
 import org.apache.cordova.PluginResult;
+import org.apache.cordova.CordovaActivity;
+
+import android.content.ClipData;
+import android.content.ContentResolver;
+import android.content.IntentFilter;
+import android.content.pm.PackageManager;
+import android.os.Build;
+import android.os.Bundle;
+import android.os.Environment;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
+import android.support.v4.content.FileProvider;
+import android.webkit.MimeTypeMap;
+
+import java.io.File;
+import java.io.FileNotFoundException;
 
 /**
  * WebIntent is a PhoneGap plugin that bridges Android intents and web
@@ -167,7 +187,7 @@ public class WebIntent extends CordovaPlugin {
     @Override
     public void onNewIntent(Intent intent) {
 
-        Log.i(LOG_TAG, String.format("URI : %s", uri));
+        Log.i(LOG_TAG, String.format("NEW INTENT : %s", intent.getDataString());
 
         if (this.onNewIntentCallbackContext != null) {
             PluginResult result = new PluginResult(PluginResult.Status.OK, getIntentJson(intent));
@@ -331,7 +351,7 @@ public class WebIntent extends CordovaPlugin {
             return String.valueOf(value);
         }
     }
-    
+
     // Receiver that listens for com.android.vending.INSTALL_REFERRER, an intent sent by the
     // Play Store on installation when the referrer parameter of the install URL is populated:
     // https://play.google.com/store/apps/details?id=|APP_ID|&referrer=|REFERRER|
