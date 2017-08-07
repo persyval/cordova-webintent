@@ -142,7 +142,7 @@ public class WebIntent extends CordovaPlugin {
                             items[i].put("extension", extension);
                         }
 
-                    } catch (JSONException e) {
+                    } catch (Exception e) {
                         Log.d(LOG_TAG, " Error thrown during intent > JSON conversion");
                         Log.d(LOG_TAG, e.getMessage());
                         Log.d(LOG_TAG, Arrays.toString(e.getStackTrace()));
@@ -171,7 +171,7 @@ public class WebIntent extends CordovaPlugin {
             intentJSON.put("package", intent.getPackage());
 
             return intentJSON;
-        } catch (JSONException e) {
+        } catch (Exception e) {
             Log.d(LOG_TAG, " Error thrown during intent > JSON conversion");
             Log.d(LOG_TAG, e.getMessage());
             Log.d(LOG_TAG, Arrays.toString(e.getStackTrace()));
@@ -184,12 +184,12 @@ public class WebIntent extends CordovaPlugin {
         //  Credit: https://github.com/napolitano/cordova-plugin-intent
         try {
             return (JSONObject) toJsonValue(bundle);
-        } catch (JSONException e) {
+        } catch (Exception e) {
             throw new IllegalArgumentException("Cannot convert bundle to JSON: " + e.getMessage(), e);
         }
     }
 
-    private static Object toJsonValue(final Object value) throws JSONException {
+    private static Object toJsonValue(final Object value) throws Exception {
         //  Credit: https://github.com/napolitano/cordova-plugin-intent
         if (value == null) {
             return null;
