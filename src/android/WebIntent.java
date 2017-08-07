@@ -106,11 +106,13 @@ public class WebIntent extends CordovaPlugin {
                 callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK, uri));
                 return true;
             } else if ("getUrl2".equals(action)) {
+                Log.i(LOG_TAG, "=====================");
+                Log.i(LOG_TAG, "flag1: calling url2");
+                Log.i(LOG_TAG, "=====================");
                 if (args.length() != 0) {
                     callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.INVALID_ACTION));
                     return false;
                 }
-                Log.i(LOG_TAG, "persyval: calling url2");
 //                Intent i = ((CordovaActivity)this.cordova.getActivity()).getIntent();
 //                String uri = i.getDataString();
 //                if (uri == null && installReferrer != null) {
