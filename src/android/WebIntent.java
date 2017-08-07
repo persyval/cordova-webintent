@@ -187,7 +187,7 @@ public class WebIntent extends CordovaPlugin {
     @Override
     public void onNewIntent(Intent intent) {
 
-        Log.i(LOG_TAG, String.format("NEW INTENT : %s", intent.getDataString());
+        Log.i(LOG_TAG, String.format("NEW INTENT : %s", intent.getDataString()));
 
         if (this.onNewIntentCallbackContext != null) {
             PluginResult result = new PluginResult(PluginResult.Status.OK, getIntentJson(intent));
