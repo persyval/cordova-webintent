@@ -118,10 +118,10 @@ public class WebIntent extends CordovaPlugin {
                 Log.i(LOG_TAG, String.format("URI : %s", uri));
                 Log.i(LOG_TAG, "=====================");
 
-//                if (uri == null && installReferrer != null) {
-//                    uri = installReferrer;  // App just installed, received play store referrer intent.
-//                    Log.i(LOG_TAG, String.format("URI is an install referrer: %s", installReferrer));
-//                }
+                if (uri == null && installReferrer != null) {
+                    uri = installReferrer;  // App just installed, received play store referrer intent.
+                    Log.i(LOG_TAG, String.format("URI is an install referrer: %s", installReferrer));
+                }
                 callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK, uri));
                 return true;
             } else if ("onNewIntent".equals(action)) {
