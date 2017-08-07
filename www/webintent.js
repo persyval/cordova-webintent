@@ -41,12 +41,12 @@
         }, 'WebIntent', 'getUri', []);
     };
 
-    WebIntent.prototype.getUrl2 = function(success, fail) {
+    WebIntent.prototype.getUrl = function(success, fail) {
         return cordova.exec(function(args) {
             success(args);
         }, function(args) {
             fail(args);
-        }, 'WebIntent', 'getUrl2', []);
+        }, 'WebIntent', 'getUrl', []);
     };
 
     WebIntent.prototype.getExtra = function(params, success, fail) {
