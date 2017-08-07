@@ -116,7 +116,7 @@ public class WebIntent extends CordovaPlugin {
 //                if (uri == null && installReferrer != null) {
 //                    uri = installReferrer;  // App just installed, received play store referrer intent.
 //                    Log.i(LOG_TAG, String.format("URI is an install referrer: %s", installReferrer));
-                }
+//                }
                 callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK, "test"));
                 return true;
             } else if ("onNewIntent".equals(action)) {
